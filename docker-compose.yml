@@ -2,6 +2,8 @@ version: "3"
 services:
   back:
     build: ./back
+    volumes:
+      - ./db.json:/rest-api/db.json
   front-nginx:
     build:
       context: .
