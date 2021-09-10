@@ -5,6 +5,9 @@ submodules: ## Instala los submodulos de git, bajando y actualizando desde los r
 	git submodule init
 	git submodule update --recursive --remote
 
+db: ## Genera el archivo necesario para base de datos
+	touch db.json
+
 build: ## Genera las imagenes de docker
 	docker-compose build
 
@@ -14,6 +17,6 @@ docker: ## Genera y corre las imagenes de docker
 docker-down: ## Frena y borra los contenedores de docker
 	docker-compose down
 
-all: submodules docker ## Realiza "submodules" -> "docker" en ese orden.
+all: db submodules docker ## Realiza "db" -> "submodules" -> "docker" en ese orden.
 
 .PHONY: help submodules build docker docker-down all
