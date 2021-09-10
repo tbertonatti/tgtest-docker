@@ -19,4 +19,4 @@ docker-down: ## Frena y borra los contenedores de docker
 
 all: db submodules docker ## Realiza "db" -> "submodules" -> "docker" en ese orden.
 
-.PHONY: help submodules build docker docker-down all
+.PHONY: help submodules db build docker docker-down all
